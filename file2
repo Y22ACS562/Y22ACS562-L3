@@ -1,1 +1,14 @@
-hello
+---
+- name: To install WebServer  on the managed node
+  hosts: dockerhost
+  become: true
+  tasks:
+    - name: Install WebServer
+      yum:
+        name: nginx
+        state: present
+    - name: Start the WebServer
+      service:
+        name: nginx
+        state: started
+...
