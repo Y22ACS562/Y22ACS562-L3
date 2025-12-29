@@ -1,1 +1,10 @@
-heelo
+---
+- name: To install Git on the managed node
+  hosts: dockerhost
+  become: true
+  tasks:
+    - name: Install Git
+      yum:
+        name: git
+        state: present
+...
